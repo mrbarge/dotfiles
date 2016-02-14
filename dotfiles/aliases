@@ -1,0 +1,2 @@
+alias cwd2ldp='export LD_LIBRARY_PATH=`pwd`:${LD_LIBRARY_PATH}'
+alias cwd2path='export PATH=`pwd`:${PATH}'
