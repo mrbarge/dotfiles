@@ -36,3 +36,5 @@ for f in `find $DOTFILES_DIR/dotfiles/ -maxdepth 1 -a \( -type d -o -type f \)`;
 	echo "Deployed $dotfile"
 done
 
+mkdir -p $HOME/.vim/bundle
+git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/vundle
