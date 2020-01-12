@@ -38,3 +38,6 @@ done
 
 mkdir -p $HOME/.vim/bundle
 git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/vundle
+
+mkdir -p $HOME/.tmux/plugins
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
