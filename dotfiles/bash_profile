@@ -5,8 +5,42 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
+# kube-ps1
+function get_cluster_short() {
+    echo "$1" | cut -d . -f1
+}
+KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
+KUBE_PS1_BINARY=$HOME/bin/oc
+source $HOME/bin/kube-ps1.sh
+PS1='[\u@\h \W $(kube_ps1)]\$ '
+
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/go/bin
+GOPATH=$HOME/go
+export GOPATH
 
+PATH=$PATH:$HOME/.local/bin:$HOME/bin:$GOPATH/bin
 export PATH
+
+function rebaseupstream () {
+  branch=prod
+  if ! [[ -z "$1" ]]; then
+    branch=$1
+  fi
+
+  startbranch=$(git describe --contains --all HEAD)
+  git checkout $branch
+  git fetch upstream
+  git fetch upstream --tags
+  git rebase upstream/$branch
+  git push origin $branch
+  git push origin --tags
+  git checkout ${startbranch}
+}
+
+# urg, gnome
+unset SSH_ASKPASS
+
+function set_ocm_token() {
+  export OCM_TOKEN=`cat ~/.ocm.json | jq -r .access_token`
+}

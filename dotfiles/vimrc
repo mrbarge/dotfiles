@@ -17,6 +17,9 @@ Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'ap/vim-buftabline'
 
+set rtp+=~/.fzf
+Plugin 'junegunn/fzf.vim'
+
 " The bundles you install will be listed here
 
 filetype plugin indent on
@@ -70,7 +73,7 @@ set laststatus=2
 "let g:solarized_termcolors=256
 set background=dark
 " loading the solarized colorscheme is silent to prevent error during initial install
-silent! colorscheme solarized
+"silent! colorscheme solarized
 
 augroup vimrc_autocmds
     autocmd!

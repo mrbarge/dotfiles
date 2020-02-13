@@ -1,3 +1,7 @@
 if [ -f ~/.aliases ]; then
 	. ~/.aliases
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+[[ -s "/home/mbargenq/.gvm/scripts/gvm" ]] && source "/home/mbargenq/.gvm/scripts/gvm"
