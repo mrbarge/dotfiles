@@ -11,15 +11,17 @@ function get_cluster_short() {
 }
 KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
 KUBE_PS1_BINARY=$HOME/bin/oc
-source $HOME/bin/kube-ps1.sh
-PS1='[\u@\h \W $(kube_ps1)]\$ '
+if [[ -f $HOME/bin/kube-ps1.sh ]]; then
+  source $HOME/bin/kube-ps1.sh
+  PS1='[\u@\h \W $(kube_ps1)]\$ '
+fi
 
 # User specific environment and startup programs
 
 GOPATH=$HOME/go
 export GOPATH
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin:$GOPATH/bin
+PATH=$HOME/bin:$HOME/.local/bin:$GOPATH/bin:${PATH}
 export PATH
 
 function rebaseupstream () {
