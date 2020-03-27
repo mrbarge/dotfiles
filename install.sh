@@ -2,6 +2,8 @@
 
 # Adapted from https://github.com/webpro/dotfiles/blob/master/install.sh
 
+sudo yum install tmux powerline tmux-powerline vim-powerline powerline-fonts 
+
 # Get current dir (so run this script from anywhere)
 export DOTFILES_DIR 
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"

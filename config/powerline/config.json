@@ -1,0 +1,48 @@
+{
+	"common": {
+		"term_truecolor": true,
+		"term_escape_style": "auto"
+	},
+	"ext": {
+		"ipython": {
+			"theme": "in",
+			"local_themes": {
+				"rewrite": "rewrite",
+				"out": "out",
+				"in2": "in2"
+			}
+		},
+		"pdb": {
+			"theme": "default"
+		},
+		"shell": {
+			"theme": "default_leftonly",
+			"local_themes": {
+				"continuation": "continuation",
+				"select": "select"
+			}
+		},
+		"tmux": {
+			"theme": "default"
+		},
+		"vim": {
+			"theme": "default",
+			"local_themes": {
+				"__tabline__": "tabline",
+
+				"cmdwin": "cmdwin",
+				"help": "help",
+				"quickfix": "quickfix",
+
+				"powerline.matchers.vim.plugin.nerdtree.nerdtree": "plugin_nerdtree",
+				"powerline.matchers.vim.plugin.commandt.commandt": "plugin_commandt",
+				"powerline.matchers.vim.plugin.gundo.gundo": "plugin_gundo",
+				"powerline.matchers.vim.plugin.gundo.gundo_preview": "plugin_gundo-preview"
+			}
+		},
+		"wm": {
+			"theme": "default",
+			"update_interval": 2
+		}
+	}
+}

@@ -1,0 +1,8 @@
+set-option -g status-justify left
+set-option -g status-left-length 16
+
+set -g status-left-length 30
+set -g status-left '#[fg=green](#(whoami)@#h)'
+set -g status-right '#[fg=yellow]#(cut -d " " -f 1-3 /proc/loadavg)#[default] #[fg=white]%H:%M#[default]'
+set -g status-right '#[bg=colour236] #[bg=colour235]#[fg=colour185] #(date "+%a %b %d %H:%M") | #{battery_icon}#{battery_percentage} | #[fg=yellow]#(cut -d " " -f 1-3 /proc/loadavg)#[default] #[fg=white]%H:%M#[default]'
+
